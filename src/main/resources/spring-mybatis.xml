@@ -37,13 +37,15 @@
         <property name="maxWait" value="${jdbc.maxWait}"></property>
     </bean>
 
-    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 
+    	注意：此处引用的数据源dataSource必须与DataSourceTransactionManager引用的数据源一致，否则事务管理会不起作用
+    -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:com/bobo/testSSM/mapping/*.xml"></property>
     </bean>
-  
+    
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.bobo.testSSM.dao" />
@@ -55,5 +57,19 @@
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
+    
+    <bean id="interceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_NOT_SUPPORTED,readOnly</prop>
+				<prop key="delete*">PROPAGATION_SUPPORTS</prop>
+				<prop key="insert*">PROPAGATION_SUPPORTS</prop>
+				<prop key="update*">PROPAGATION_SUPPORTS</prop>
+				<prop key="save*">PROPAGATION_SUPPORTS</prop>
+				<prop key="add*">PROPAGATION_SUPPORTS</prop>
+			</props>
+		</property>
+	</bean>
   
 </beans>
