@@ -17,25 +17,21 @@
 	-->
 	<context:component-scan base-package="com.bobo.testSSM.controller" />
 	
-	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->
-	<bean id="mappingJacksonHttpMessageConverter"
-		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+	<bean id="mappingJackson2HttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 		<property name="supportedMediaTypes">
 			<list>
-				<value>text/html;charset=UTF-8</value>
+				<value>application/json;charset=UTF-8</value>
 			</list>
 		</property>
 	</bean>
 	
-	<!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-			<list>
-				<ref bean="mappingJacksonHttpMessageConverter" />	<!-- JSON转换器 -->
-			</list>
-		</property>
-	</bean>
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+			<ref bean="mappingJackson2HttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 	
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -55,21 +51,24 @@
         <property name="maxInMemorySize" value="40960" />
     </bean>
     
+    <!-- spring的代理配置
     <bean id="welcomeAdvice" class="com.bobo.testSSM.advice.WelcomeAdvice" />
     <bean id="testInterceptor" class="com.bobo.testSSM.advice.TestInterceptor" />
+    <bean class="com.bobo.testSSM.service.impl.UserServiceImpl" id="userService"/>
     
     <bean id="serviceInteceptorProxyCreator"
         class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="interceptorNames">
             <list>
+                <value>welcomeAdvice</value>
                 <value>testInterceptor</value>
             </list>
         </property>
         <property name="beanNames">
         	<list>
-            	<value>*Service</value>
+            	<value>userService</value>
             </list>
         </property>
     </bean>
-
+    -->
 </beans>
