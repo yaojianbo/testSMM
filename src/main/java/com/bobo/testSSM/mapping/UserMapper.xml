@@ -24,10 +24,8 @@
   </delete>
   
   <insert id="insert" parameterType="com.bobo.testSSM.pojo.User" >
-    insert into user_t (id, username, password, 
-      age)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{age,jdbcType=INTEGER})
+    insert into user_t (id, username, password, age)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
   </insert>
   
   <insert id="insertSelective" parameterType="com.bobo.testSSM.pojo.User" >
