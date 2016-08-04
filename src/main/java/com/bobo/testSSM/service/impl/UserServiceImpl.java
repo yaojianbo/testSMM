@@ -1,6 +1,8 @@
 package com.bobo.testSSM.service.impl;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +13,16 @@ import com.bobo.testSSM.service.IUserService;
 @Service("userService")
 public class UserServiceImpl implements IUserService 
 {
+	private static Logger Logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	
 	@Autowired
 	private IUserDao userDao;
 
 	@Override
 	public User getUserById(int userID) 
 	{
-		// System.out.println("getUserById 执行");
+		Logger.debug("getUserById : userID = " + userID);
+		
 		return this.userDao.selectByPrimaryKey(userID);
 	}
 

@@ -10,15 +10,8 @@
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
                          
-    <!-- 自动扫描 -->  
-    <context:component-scan base-package="com.bobo.testSSM" />
-    
-    <!-- 引入配置文件 -->
-    <bean id="propertyConfigurer"
-        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:jdbc.properties" />
-    </bean>
-  
+
+	<!-- 数据源配置 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
         destroy-method="close">
         <property name="driverClassName" value="${jdbc.driver}" />
@@ -38,8 +31,7 @@
     </bean>
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 
-    	注意：此处引用的数据源dataSource必须与DataSourceTransactionManager引用的数据源一致，否则事务管理会不起作用
-    -->
+    	注意：此处引用的数据源dataSource必须与DataSourceTransactionManager引用的数据源一致，否则事务管理会不起作用 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->
@@ -58,6 +50,7 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
     
+    <!-- 事务拦截器 -->
     <bean id="interceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
 		<property name="transactionManager" ref="transactionManager" />
 		<property name="transactionAttributes">
@@ -71,5 +64,7 @@
 			</props>
 		</property>
 	</bean>
+	
+	<!-- 注意：拦截器尚未配置完，等待继续 -->
   
 </beans>
