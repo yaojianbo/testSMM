@@ -2,11 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
     xmlns:context="http://www.springframework.org/schema/context"  
-    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:tx="http://www.springframework.org/schema/tx"  
     xsi:schemaLocation="http://www.springframework.org/schema/beans    
                         http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
                         http://www.springframework.org/schema/context    
-                        http://www.springframework.org/schema/context/spring-context-3.1.xsd    
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+                        http://www.springframework.org/schema/tx 
+                        http://www.springframework.org/schema/tx/spring-tx-2.0.xsd   
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
                          
@@ -45,12 +48,18 @@
     </bean>  
   
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->  
-    <bean id="transactionManager"
+    <bean id="txManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
     
-    <!-- 事务拦截器 -->
+    <!-- 
+    	enable the configuration of transactional behavior based on annotations 
+    	这一行实现注解事务
+    -->  
+  	<tx:annotation-driven transaction-manager="txManager"/>
+    
+    <!-- 事务拦截器 
     <bean id="interceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
 		<property name="transactionManager" ref="transactionManager" />
 		<property name="transactionAttributes">
@@ -64,7 +73,7 @@
 			</props>
 		</property>
 	</bean>
-	
+	-->
 	<!-- 注意：拦截器尚未配置完，等待继续 -->
   
 </beans>
