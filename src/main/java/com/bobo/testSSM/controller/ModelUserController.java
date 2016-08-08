@@ -1,5 +1,8 @@
 package com.bobo.testSSM.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -35,10 +38,14 @@ public class ModelUserController
 		
 		User user = this.userService.getUserById(userId);
 		
-		// Model内容设置
-		model.addAttribute("user", user);
+		List<User> userList = new ArrayList<User>();
+		userList.add(user);
+		userList.add(user);// 多添加一个重复的元素，制造列表效果
 		
-		// 调取对应的VIEW
+		// Model内容设置
+		model.addAttribute("userList", userList);
+		
+		// 调取对应的VIEW(.jsp)
 		return "showUser";
 	}
 }
