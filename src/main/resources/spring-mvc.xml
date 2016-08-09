@@ -17,6 +17,11 @@
 	-->
 	<context:component-scan base-package="com.bobo.testSSM.controller" />
 	
+	<!-- 是spring MVC为@Controllers分发请求所必须的。
+		提供了：数据绑定支持，@NumberFormatannotation支持，@DateTimeFormat支持，@Valid支持，读写XML的支持（JAXB），读写JSON的支持（Jackson）。-->
+	<mvc:annotation-driven />
+	
+	<!-- 
 	<bean id="mappingJackson2HttpMessageConverter"
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 		<property name="supportedMediaTypes">
@@ -25,16 +30,17 @@
 			</list>
 		</property>
 	</bean>
-	
-	<mvc:annotation-driven>
-		<mvc:message-converters>
-			<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
-			<ref bean="mappingJackson2HttpMessageConverter" />
-		</mvc:message-converters>
-	</mvc:annotation-driven>
-	
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">  
+	        <list>
+	            <ref bean="mappingJackson2HttpMessageConverter" />
+	        </list>
+    	</property>
+	</bean>
+	-->
+	 
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置-->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
 		<property name="prefix" value="/jsp/" />
 		<property name="suffix" value=".jsp" />
@@ -50,6 +56,16 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960" />
     </bean>
+    
+    <!-- SpringMVC的Controller(Handler)配置拦截器 -->
+	<mvc:interceptors>
+	    <!-- 多个拦截器，按顺序执行 -->
+	    <mvc:interceptor>
+	        <mvc:mapping path="/userR*/*"/> <!-- 拦截的url过滤配置 -->
+	        <bean class="com.bobo.testSSM.advice.MyHandlerInterceptor"/>
+	    </mvc:interceptor>
+	    <!-- 其他拦截器..... -->
+	</mvc:interceptors>
     
     <!-- spring的代理配置
     <bean id="welcomeAdvice" class="com.bobo.testSSM.advice.WelcomeAdvice" />
