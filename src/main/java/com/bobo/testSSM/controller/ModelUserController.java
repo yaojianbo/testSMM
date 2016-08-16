@@ -1,6 +1,5 @@
 package com.bobo.testSSM.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,23 +28,20 @@ public class ModelUserController
 	@Autowired
 	private IUserService userService;
 	
-	@RequestMapping("/showUserJSP")
+	@RequestMapping("/showUserListJSP")
 	public String toIndex(HttpServletRequest request, Model model)
 	{
-		int userId = Integer.parseInt(request.getParameter("userID"));
+		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
+		int pageSize = Integer.parseInt(request.getParameter("pageSize"));
 		
-		Logger.debug("Request for->/showUserJSP:userID=" + userId);
+		Logger.debug("Request for->/showUserListJSP:pageNum=" + pageNum + ";pageSize=" + pageSize);
 		
-		User user = this.userService.getUserById(userId);
-		
-		List<User> userList = new ArrayList<User>();
-		userList.add(user);
-		userList.add(user);// 多添加一个重复的元素，制造列表效果
+		List<User> userList = this.userService.queryByPage(pageNum, pageSize);
 		
 		// Model内容设置
 		model.addAttribute("userList", userList);
 		
 		// 调取对应的VIEW(.jsp)
-		return "showUser";
+		return "showUserList";
 	}
 }

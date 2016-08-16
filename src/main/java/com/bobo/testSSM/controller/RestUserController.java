@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bobo.testSSM.controller.request.GetUserRequest;
+import com.bobo.testSSM.controller.request.UserLoginRequest;
 import com.bobo.testSSM.pojo.User;
-import com.bobo.testSSM.service.IUserService;
+import com.bobo.testSSM.service.IAuthService;
 
 /**
  * UserController:用于demo的controller建立
@@ -25,14 +25,14 @@ public class RestUserController
 	private static Logger Logger = LoggerFactory.getLogger(RestUserController.class);
 	
 	@Autowired
-	private IUserService userService;
+	private IAuthService authService;
 	
-	@RequestMapping("/getUser")
-	public Object getUser(@RequestBody GetUserRequest request)
+	@RequestMapping("/login")
+	public Object login(@RequestBody UserLoginRequest request)
 	{
-		Logger.debug("Request for->/getUser:userID=" + request.getUserID());
+		Logger.debug("Request for->/getUser:userName=" + request.getUserName());
 		
-		User user = this.userService.getUserById(request.getUserID());
+		User user = this.authService.getUserByUserName(request.getUserName());
 		return user;
 	}
 }

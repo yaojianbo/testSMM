@@ -1,0 +1,170 @@
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro.ini]
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.config.Ini]Parsing [users]
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=users]
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.realm.text.IniRealm]Discovered the [users] section.  Processing...
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.realm.AuthenticatingRealm]Looked up AuthenticationInfo [yaojianbo] from doGetAuthenticationInfo
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.realm.AuthenticatingRealm]AuthenticationInfo caching is disabled for info [yaojianbo].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.authc.credential.SimpleCredentialsMatcher]Performing credentials equality check for tokenCredentials of type [[C and accountCredentials of type [java.lang.String]
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.authc.credential.SimpleCredentialsMatcher]Both credentials arguments can be easily converted to byte arrays.  Performing array equals comparison
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 11:11:50][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 11:11:50][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [a13c5ebf-4f96-4664-b3e3-7f022337c246]
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro.ini]
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.config.Ini]Parsing [users]
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=users]
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.realm.text.IniRealm]Discovered the [users] section.  Processing...
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.realm.AuthenticatingRealm]Looked up AuthenticationInfo [yaojianbo] from doGetAuthenticationInfo
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.realm.AuthenticatingRealm]AuthenticationInfo caching is disabled for info [yaojianbo].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.authc.credential.SimpleCredentialsMatcher]Performing credentials equality check for tokenCredentials of type [[C and accountCredentials of type [java.lang.String]
+[DEBUG] [2016-08-15 11:12:48][org.apache.shiro.authc.credential.SimpleCredentialsMatcher]Both credentials arguments can be easily converted to byte arrays.  Performing array equals comparison
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 14:46:13][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 14:46:13][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 14:46:13][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [9daf880f-2566-48ce-b7c7-df94980c574a]
+[DEBUG] [2016-08-15 14:46:44][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 14:46:44][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 14:46:45][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 14:46:45][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 14:46:45][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 14:47:27][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 14:47:27][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 14:47:27][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 14:47:27][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 14:47:27][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 14:47:36][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 14:47:36][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 14:47:36][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 14:47:36][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 14:47:36][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 14:47:50][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 14:47:50][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 14:47:50][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [aba81247-a7e9-4743-bdb3-21fb1dc97ddf]
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 14:49:10][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 14:49:10][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 14:49:10][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [610a6938-95fa-4a00-83f2-bb0cf2fe3ba0]
+[DEBUG] [2016-08-15 14:49:23][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 14:49:23][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 14:49:23][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 14:49:23][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 14:49:23][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-realm.ini]
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm'.  Looking up object with id 'testRealm'
+[INFO] [2016-08-15 15:10:01][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 15:10:01][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 15:10:01][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [8162c8d1-b7fd-4a79-a298-07ad32db2c01]
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-multi-realm.ini]
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm1'.  Looking up object with id 'testRealm1'
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm2'.  Looking up object with id 'testRealm2'
+[INFO] [2016-08-15 15:19:08][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 15:19:08][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 15:19:08][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [f72b55e7-13d5-4285-96aa-dbe2f085861b]
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-multi-realm.ini]
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm1'.  Looking up object with id 'testRealm1'
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm2'.  Looking up object with id 'testRealm2'
+[INFO] [2016-08-15 15:19:53][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[WARN] [2016-08-15 15:19:53][org.apache.shiro.authc.pam.ModularRealmAuthenticator]Realm [com.bobo.testSSM.shiro.TestRealm2@3efd2905] threw an exception during a multi-realm authentication attempt:
+org.apache.shiro.authc.IncorrectCredentialsException: the password is not ok
+	at com.bobo.testSSM.shiro.TestRealm2.getAuthenticationInfo(TestRealm2.java:40)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doMultiRealmAuthentication(ModularRealmAuthenticator.java:219)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:269)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.bobo.testSSM.shiro.TestShiro.testAuthenticationWithMultiRealm(TestShiro.java:73)
+	at com.bobo.testSSM.shiro.TestShiro.main(TestShiro.java:15)
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 15:19:53][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 15:19:53][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [d63c4690-0037-498b-a248-1236da8c744f]
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-multi-realm.ini]
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm1'.  Looking up object with id 'testRealm1'
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm2'.  Looking up object with id 'testRealm2'
+[INFO] [2016-08-15 15:21:07][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[WARN] [2016-08-15 15:21:07][org.apache.shiro.authc.pam.ModularRealmAuthenticator]Realm [com.bobo.testSSM.shiro.TestRealm1@18047193] threw an exception during a multi-realm authentication attempt:
+org.apache.shiro.authc.IncorrectCredentialsException: the password is not ok
+	at com.bobo.testSSM.shiro.TestRealm1.getAuthenticationInfo(TestRealm1.java:40)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doMultiRealmAuthentication(ModularRealmAuthenticator.java:219)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:269)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.bobo.testSSM.shiro.TestShiro.testAuthenticationWithMultiRealm(TestShiro.java:73)
+	at com.bobo.testSSM.shiro.TestShiro.main(TestShiro.java:15)
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 15:21:07][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 15:21:07][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [51830729-9a14-40c8-95f3-557c1b487b5e]
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.io.ResourceUtils]Opening resource from class path [shiro-multi-realm.ini]
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.config.IniFactorySupport]Creating instance from Ini [sections=<default>]
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm1'.  Looking up object with id 'testRealm1'
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.config.ReflectionBuilder]Encountered object reference '$testRealm2'.  Looking up object with id 'testRealm2'
+[INFO] [2016-08-15 15:25:29][org.apache.shiro.config.IniSecurityManagerFactory]Realms have been explicitly set on the SecurityManager instance - auto-setting of realms will not occur.
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.authc.AbstractAuthenticator]Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - yaojianbo, rememberMe=false].  Returned account [yaojianbo]
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.subject.support.DefaultSubjectContext]No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]No sessionValidationScheduler set.  Attempting to create default instance.
+[INFO] [2016-08-15 15:25:29][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.session.mgt.DefaultSessionManager]Creating new EIS record for new session instance [org.apache.shiro.session.mgt.SimpleSession,id=null]
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.mgt.DefaultSecurityManager]Logging out subject with primary principal yaojianbo
+[DEBUG] [2016-08-15 15:25:29][org.apache.shiro.session.mgt.AbstractSessionManager]Stopping session with id [d09e5586-998b-459e-b066-179dd2b92b46]

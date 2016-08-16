@@ -1,33 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bobo.testSSM.dao.IUserDao" >
-
+<mapper namespace="com.bobo.testSSM.dao.UserDao" >
   <resultMap id="BaseResultMap" type="com.bobo.testSSM.pojo.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="isdelete" property="isdelete" jdbcType="INTEGER" />
+    <result column="createdate" property="createdate" jdbcType="DATE" />
   </resultMap>
-  
   <sql id="Base_Column_List" >
-    id, username, password, age
+    id, username, password, age, isdelete, createdate
   </sql>
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from user_t where id = #{id,jdbcType=INTEGER}
+    from user_t
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_t
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_t
+    where isdelete = #{isdelete,jdbcType=INTEGER} order by createdate desc 
+    limit #{pageNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from user_t where id = #{id,jdbcType=INTEGER}
+    delete from user_t
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   
   <insert id="insert" parameterType="com.bobo.testSSM.pojo.User" >
-    insert into user_t (id, username, password, age)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+    insert into user_t (id, username, password, 
+      age, isdelete, createdate
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER}, #{isdelete,jdbcType=INTEGER}, #{createdate,jdbcType=DATE}
+      )
   </insert>
-  
   <insert id="insertSelective" parameterType="com.bobo.testSSM.pojo.User" >
     insert into user_t
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -43,6 +63,12 @@
       <if test="age != null" >
         age,
       </if>
+      <if test="isdelete != null" >
+        isdelete,
+      </if>
+      <if test="createdate != null" >
+        createdate,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -56,6 +82,12 @@
       </if>
       <if test="age != null" >
         #{age,jdbcType=INTEGER},
+      </if>
+      <if test="isdelete != null" >
+        #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -72,15 +104,22 @@
       <if test="age != null" >
         age = #{age,jdbcType=INTEGER},
       </if>
+      <if test="isdelete != null" >
+        isdelete = #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="createdate != null" >
+        createdate = #{createdate,jdbcType=DATE},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  
   <update id="updateByPrimaryKey" parameterType="com.bobo.testSSM.pojo.User" >
-    update user_t set 
- 					username = #{username,jdbcType=VARCHAR},
-   					password = #{password,jdbcType=VARCHAR},
-   					age = #{age,jdbcType=INTEGER}
- 			where id = #{id,jdbcType=INTEGER}
+    update user_t
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      isdelete = #{isdelete,jdbcType=INTEGER},
+      createdate = #{createdate,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
