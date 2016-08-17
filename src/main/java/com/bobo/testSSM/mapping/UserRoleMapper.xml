@@ -6,25 +6,37 @@
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
   </resultMap>
+  
   <sql id="Base_Column_List" >
     id, user_id, role_id
   </sql>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from user_role_t
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectByUserID" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_role_t
+    where user_id = #{user_id,jdbcType=INTEGER}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user_role_t
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  
   <insert id="insert" parameterType="com.bobo.testSSM.pojo.UserRole" >
     insert into user_role_t (id, user_id, role_id
       )
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}
       )
   </insert>
+  
   <insert id="insertSelective" parameterType="com.bobo.testSSM.pojo.UserRole" >
     insert into user_role_t
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -50,6 +62,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="com.bobo.testSSM.pojo.UserRole" >
     update user_role_t
     <set >
@@ -62,6 +75,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
   <update id="updateByPrimaryKey" parameterType="com.bobo.testSSM.pojo.UserRole" >
     update user_role_t
     set user_id = #{userId,jdbcType=INTEGER},

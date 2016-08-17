@@ -1,5 +1,8 @@
 package com.bobo.testSSM.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import com.bobo.testSSM.pojo.User;
 
 public interface UserDao
@@ -13,6 +16,8 @@ public interface UserDao
 	User selectByPrimaryKey(Integer id);
 	
 	User selectByUserName(String userName);
+	
+	List<User> queryByPage(Map<String, Object> parameterMap);
 
 	int updateByPrimaryKeySelective(User record);
 

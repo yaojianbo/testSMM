@@ -1,5 +1,7 @@
 package com.bobo.testSSM.dao;
 
+import java.util.List;
+
 import com.bobo.testSSM.pojo.RolePermission;
 
 public interface RolePermissionDao {
@@ -10,6 +12,8 @@ public interface RolePermissionDao {
     int insertSelective(RolePermission record);
 
     RolePermission selectByPrimaryKey(Integer id);
+    
+    List<RolePermission> selectByRoleID(Integer role_id);
 
     int updateByPrimaryKeySelective(RolePermission record);
 

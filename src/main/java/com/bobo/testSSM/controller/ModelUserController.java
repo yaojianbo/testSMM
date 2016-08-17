@@ -28,17 +28,36 @@ public class ModelUserController
 	@Autowired
 	private IUserService userService;
 	
-	@RequestMapping("/showUserListJSP")
+	@RequestMapping("/showUserList")
 	public String toIndex(HttpServletRequest request, Model model)
 	{
-		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
-		int pageSize = Integer.parseInt(request.getParameter("pageSize"));
+		int pageNum = 1; // 默认查询第一页
+		int pageSize = 10; // 默认每页10条记录
+		int isDelete = 1; // 默认查询状态为未删除的记录
 		
-		Logger.debug("Request for->/showUserListJSP:pageNum=" + pageNum + ";pageSize=" + pageSize);
+		try
+		{
+			pageNum = Integer.parseInt(request.getParameter("pageNum"));
+			pageSize = Integer.parseInt(request.getParameter("pageSize"));
+			isDelete = Integer.parseInt(request.getParameter("isDelete"));
+		}
+		catch (Exception e)
+		{
+			model.addAttribute("success", "-1");
+			model.addAttribute("msg", "请求参数有错误，请检查参数是否合法.");
+			model.addAttribute("userList", null);
+			
+			return "showUserList";
+		}
 		
-		List<User> userList = this.userService.queryByPage(pageNum, pageSize);
+		Logger.info("Request for->/showUserListJSP:pageNum=" + pageNum 
+				+ ";pageSize=" + pageSize + ";isDelete=" + isDelete);
+		
+		List<User> userList = this.userService.queryByPage(pageNum, pageSize, isDelete);
 		
 		// Model内容设置
+		model.addAttribute("success", "1");
+		model.addAttribute("msg", "请求成功");
 		model.addAttribute("userList", userList);
 		
 		// 调取对应的VIEW(.jsp)

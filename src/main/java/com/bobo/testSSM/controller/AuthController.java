@@ -12,17 +12,17 @@ import com.bobo.testSSM.pojo.User;
 import com.bobo.testSSM.service.IAuthService;
 
 /**
- * UserController:用于demo的controller建立
+ * AuthController:shiro权限管理
  * 
  * @author YAOJIANBO
  * RestController:相当于类上加@Controller和方法上加@ResponseBody的结合体，两个标注合并起来的作用
  *
  */
 @RestController
-@RequestMapping("/userRest")
-public class RestUserController
+@RequestMapping("/authc")
+public class AuthController
 {
-	private static Logger Logger = LoggerFactory.getLogger(RestUserController.class);
+	private static Logger Logger = LoggerFactory.getLogger(AuthController.class);
 	
 	@Autowired
 	private IAuthService authService;
@@ -30,7 +30,7 @@ public class RestUserController
 	@RequestMapping("/login")
 	public Object login(@RequestBody UserLoginRequest request)
 	{
-		Logger.debug("Request for->/getUser:userName=" + request.getUserName());
+		Logger.debug("Request for->/login:userName=" + request.getUserName());
 		
 		User user = this.authService.getUserByUserName(request.getUserName());
 		return user;
