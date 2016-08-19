@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+                        http://www.springframework.org/schema/mvc    
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+                         
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/toLogin" />
+		<property name="successUrl" value="/home" />
+		<property name="unauthorizedUrl" value="/403.do" />
+		 
+		<property name="filterChainDefinitions">
+			<value>
+				/toLogin = authc <!-- authc 表示需要认证才能访问的页面 -->
+				/home = authc, perms[/home]  <!-- perms 表示需要该权限才能访问的页面 -->
+			</value>
+		</property>
+	</bean>
+
+	<bean id="myShiroRealm" class="com.bobo.testSSM.shiro.MyShiroRealm">
+		<!-- businessManager 用来实现用户名密码的查询 -->
+		<property name="authService" ref="authService" />
+	</bean>
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="myShiroRealm"></property>
+	</bean>
+
+</beans>

@@ -6,10 +6,15 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bobo.testSSM.service.IAuthService;
 
 public class MyShiroRealm extends AuthorizingRealm
 {
-
+	@Autowired
+	private IAuthService authService;
+	
 	/**
 	 * 获取授权信息
 	 */

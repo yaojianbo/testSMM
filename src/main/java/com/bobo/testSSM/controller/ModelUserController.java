@@ -44,7 +44,7 @@ public class ModelUserController
 		catch (Exception e)
 		{
 			model.addAttribute("success", "-1");
-			model.addAttribute("msg", "请求参数有错误，请检查参数是否合法.");
+			model.addAttribute("msg", "request parameter error, please check");
 			model.addAttribute("userList", null);
 			
 			return "showUserList";
@@ -57,7 +57,7 @@ public class ModelUserController
 		
 		// Model内容设置
 		model.addAttribute("success", "1");
-		model.addAttribute("msg", "请求成功");
+		model.addAttribute("msg", "request success");
 		model.addAttribute("userList", userList);
 		
 		// 调取对应的VIEW(.jsp)
