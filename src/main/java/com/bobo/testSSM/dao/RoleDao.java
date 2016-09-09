@@ -1,6 +1,6 @@
 package com.bobo.testSSM.dao;
 
-import com.bobo.testSSM.pojo.Role;
+import com.bobo.testSSM.dao.pojo.Role;
 
 public interface RoleDao {
     int deleteByPrimaryKey(Integer id);

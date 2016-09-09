@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bobo.testSSM.dao.UserDao;
-import com.bobo.testSSM.pojo.User;
+import com.bobo.testSSM.dao.pojo.User;
 import com.bobo.testSSM.service.BaseService;
 import com.bobo.testSSM.service.IUserService;
 

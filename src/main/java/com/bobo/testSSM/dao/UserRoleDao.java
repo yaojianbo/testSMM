@@ -2,7 +2,8 @@ package com.bobo.testSSM.dao;
 
 import java.util.List;
 
-import com.bobo.testSSM.pojo.UserRole;
+import com.bobo.testSSM.dao.pojo.UserRole;
+
 
 public interface UserRoleDao
 {

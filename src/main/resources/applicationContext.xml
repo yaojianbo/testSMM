@@ -27,5 +27,6 @@
 	<!-- 引入spring的其他各模块的配置XML文件 -->
 	<import resource="classpath:spring-mybatis.xml" />
 	<import resource="classpath:spring-jedis.xml" />
+	<import resource="classpath:spring-shiro.xml" />
 	
 </beans> 

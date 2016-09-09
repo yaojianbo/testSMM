@@ -3,7 +3,8 @@ package com.bobo.testSSM.dao;
 import java.util.List;
 import java.util.Map;
 
-import com.bobo.testSSM.pojo.User;
+import com.bobo.testSSM.dao.pojo.User;
+
 
 public interface UserDao
 {

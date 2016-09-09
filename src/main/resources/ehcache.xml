@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false">
+	<diskStore path="java.io.tmpdir"/>
+	<!-- 
+	<diskStore path="java.io.tmpdir"/>java.io.tmpdir – 默认临时文件路径
+		maxElementsInMemory：缓存中允许创建的最大对象数
+		eternal：缓存中对象是否为永久的，如果是，超时设置将被忽略，对象从不过期。
+		overflowToDisk：内存不足时，是否启用磁盘缓存。
+		memoryStoreEvictionPolicy：缓存满了之后的淘汰算法。
+		diskPersistent：磁盘存储是否在虚拟机重启后持续存在。默认只是false。
+		timeToLiveSeconds 对象最大存活时间，超过该值被删除
+		timeToIdleSeconds 无访问最大失效时间，超过该时间无访问则对象失效，如果有访问则再延长timeToIdleSeconds时长
+	 -->
+	<cache name="userCache"
+		maxElementsInMemory="1000"
+		maxElementsOnDisk="1000"
+		eternal="false"
+		overflowToDisk="true"
+		diskSpoolBufferSizeMB="100"
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="7200"
+		memoryStoreEvictionPolicy="LRU"
+	/>
+</ehcache>

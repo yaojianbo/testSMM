@@ -2,7 +2,8 @@ package com.bobo.testSSM.dao;
 
 import java.util.List;
 
-import com.bobo.testSSM.pojo.RolePermission;
+import com.bobo.testSSM.dao.pojo.RolePermission;
+
 
 public interface RolePermissionDao {
     int deleteByPrimaryKey(Integer id);

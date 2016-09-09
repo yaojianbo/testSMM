@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bobo.testSSM.dao.UserDao" >
-  <resultMap id="BaseResultMap" type="com.bobo.testSSM.pojo.User" >
+  <resultMap id="BaseResultMap" type="com.bobo.testSSM.dao.pojo.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
@@ -41,7 +41,7 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   
-  <insert id="insert" parameterType="com.bobo.testSSM.pojo.User" >
+  <insert id="insert" parameterType="com.bobo.testSSM.dao.pojo.User" >
     insert into user_t (id, username, password, 
       age, isdelete, createdate
       )
@@ -50,7 +50,7 @@
       )
   </insert>
   
-  <insert id="insertSelective" parameterType="com.bobo.testSSM.pojo.User" >
+  <insert id="insertSelective" parameterType="com.bobo.testSSM.dao.pojo.User" >
     insert into user_t
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -94,7 +94,7 @@
     </trim>
   </insert>
   
-  <update id="updateByPrimaryKeySelective" parameterType="com.bobo.testSSM.pojo.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.bobo.testSSM.dao.pojo.User" >
     update user_t
     <set >
       <if test="username != null" >
@@ -115,7 +115,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bobo.testSSM.pojo.User" >
+  <update id="updateByPrimaryKey" parameterType="com.bobo.testSSM.dao.pojo.User" >
     update user_t
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

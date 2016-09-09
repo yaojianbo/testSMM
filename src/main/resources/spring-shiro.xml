@@ -12,27 +12,71 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
                          
 
-	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-		<property name="securityManager" ref="securityManager" />
-		<property name="loginUrl" value="/toLogin" />
-		<property name="successUrl" value="/home" />
-		<property name="unauthorizedUrl" value="/403.do" />
-		 
-		<property name="filterChainDefinitions">
-			<value>
-				/toLogin = authc <!-- authc 表示需要认证才能访问的页面 -->
-				/home = authc, perms[/home]  <!-- perms 表示需要该权限才能访问的页面 -->
-			</value>
-		</property>
+	<!-- 缓存管理器 使用Ehcache实现 -->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/>
+    </bean>
+	  
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" /> 
+    
+    <!-- sessionIdCookie的实现,用于重写覆盖容器默认的JSESSIONID -->
+	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+		<!-- cookie的name,对应的默认是 JSESSIONID -->
+		<constructor-arg name="name" value="SHAREJSESSIONID"/>
+		<property name="httpOnly" value="true"/>
+		<!-- maxAge=-1表示浏览器关闭时失效此Cookie -->
+        <property name="maxAge" value="-1"/>
 	</bean>
-
+	
+	<!-- session存储的实现 -->
+	<bean id="shiroSessionDao" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO" />
+	
+	<!-- session管理器 -->
+	<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+		<!-- 超时时间 -->
+		<property name="globalSessionTimeout" value="1800000"/>
+		<!-- 删除超时或者非法的会话-->
+		<property name="deleteInvalidSessions" value="true"/>
+		<!-- 定时检查失效的session -->
+		<property name="sessionValidationSchedulerEnabled" value="true" />
+		<!-- session存储的实现 -->
+		<property name="sessionDAO" ref="shiroSessionDao"/>
+		<!-- sessionIdCookie的实现,用于重写覆盖容器默认的JSESSIONID -->
+		<property name="sessionIdCookie" ref="sessionIdCookie"/>
+		
+	</bean>
+    
 	<bean id="myShiroRealm" class="com.bobo.testSSM.shiro.MyShiroRealm">
 		<!-- businessManager 用来实现用户名密码的查询 -->
 		<property name="authService" ref="authService" />
 	</bean>
-
+	
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="sessionManager" ref="sessionManager"></property>
 		<property name="realm" ref="myShiroRealm"></property>
+		<!-- 使用下面配置的缓存管理器 ,如果不使用，每次访问需授权资源时都会执行ShiroRealm.doGetAuthorizationInfo的逻辑-->  
+        <property name="cacheManager" ref="cacheManager"/>
 	</bean>
-
+	
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/auth/login" />
+		<property name="successUrl" value="/jsp/index.jsp" />
+		<property name="unauthorizedUrl" value="/403.jsp" />
+		 
+		<property name="filterChainDefinitions">
+			<value>
+				/login.jsp = anon
+				/auth/login = anon
+				/auth/getVerifyCodeImage = anon
+				/user/getUserInfo = perms[/user/getUserInfo]<!-- perms 表示需要该权限才能访问的页面 -->
+				/user/showUserList = perms[/user/showUserList]
+				/respBodyTest/showUserList = perms[/respBodyTest/showUserList]
+				/respBodyTest/getUser = perms[/respBodyTest/getUser]
+				/jsp/info.jsp = perms[/jsp/info.jsp]
+				<!-- /jsp/index.jsp = perms[/jsp/index.jsp] -->
+				/** = authc
+			</value>
+		</property>
+	</bean>
 </beans>

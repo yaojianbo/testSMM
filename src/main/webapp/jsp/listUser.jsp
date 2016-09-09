@@ -9,7 +9,7 @@
   </head>
   
   <body>
-  	<form action="${pageContext.request.contextPath }/userModel/showUserJSP?userID=5" method="post">
+  	<form action="${pageContext.request.contextPath }/user/showUserList" method="post">
   		查询条件：
         <table width="100%" border=1>
             <tr>

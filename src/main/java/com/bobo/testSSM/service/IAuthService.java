@@ -2,9 +2,11 @@ package com.bobo.testSSM.service;
 
 import java.util.List;
 
-import com.bobo.testSSM.pojo.Permission;
-import com.bobo.testSSM.pojo.Role;
-import com.bobo.testSSM.pojo.User;
+import com.bobo.testSSM.dao.pojo.Permission;
+import com.bobo.testSSM.dao.pojo.Role;
+import com.bobo.testSSM.dao.pojo.User;
+
+
 
 public interface IAuthService
 {
@@ -20,7 +22,7 @@ public interface IAuthService
 	 * @param userName 用户登录名
 	 * @return
 	 */
-	User getUserByUserName(String userName);
+	public User getUserByUserName(String userName);
 	
 	/**
 	 * 根据userID获取用户角色列表

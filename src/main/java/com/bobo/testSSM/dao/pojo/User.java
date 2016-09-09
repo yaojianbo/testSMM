@@ -1,9 +1,12 @@
-package com.bobo.testSSM.pojo;
+package com.bobo.testSSM.dao.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User
+public class User implements Serializable
 {
+	private static final long serialVersionUID = 1963158539457721808L;
+
 	private Integer id;
 
 	private String username;

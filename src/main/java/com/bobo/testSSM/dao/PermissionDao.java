@@ -1,6 +1,6 @@
 package com.bobo.testSSM.dao;
 
-import com.bobo.testSSM.pojo.Permission;
+import com.bobo.testSSM.dao.pojo.Permission;
 
 public interface PermissionDao
 {

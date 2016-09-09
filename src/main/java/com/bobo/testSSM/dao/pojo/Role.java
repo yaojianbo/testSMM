@@ -1,4 +1,4 @@
-package com.bobo.testSSM.pojo;
+package com.bobo.testSSM.dao.pojo;
 
 public class Role {
     private Integer id;

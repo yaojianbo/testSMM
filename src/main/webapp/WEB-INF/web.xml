@@ -30,6 +30,10 @@
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
+		<init-param>  
+            <param-name>forceEncoding</param-name>  
+            <param-value>true</param-value>  
+        </init-param>
 	</filter>
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
@@ -73,5 +77,14 @@
 	<session-config>
 		<session-timeout>15</session-timeout>
 	</session-config>
+	
+	<error-page>  
+        <error-code>405</error-code>  
+        <location>/jsp/405.html</location>  
+    </error-page>
+    <error-page>  
+        <error-code>403</error-code>  
+        <location>/jsp/403.html</location>  
+    </error-page>
 
 </web-app>
