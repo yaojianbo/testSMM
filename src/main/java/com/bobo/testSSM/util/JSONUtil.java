@@ -22,7 +22,6 @@ import org.apache.commons.beanutils.BeanUtils;
 
 /**
  * JSON和JAVA的POJO的相互转换
- * JSONHelper.java
  */
 @SuppressWarnings({"rawtypes","unchecked"})
 public final class JSONUtil

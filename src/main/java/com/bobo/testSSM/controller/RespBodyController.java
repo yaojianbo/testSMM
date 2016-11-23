@@ -2,6 +2,9 @@ package com.bobo.testSSM.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.core.Context;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +32,9 @@ import com.bobo.testSSM.util.JSONUtil;
 public class RespBodyController
 {
 	private static Logger Logger = LoggerFactory.getLogger(RespBodyController.class);
+	
+	@Context
+	protected HttpServletRequest HttpRequest;
 	
 	@Autowired
 	private IAuthService authService;

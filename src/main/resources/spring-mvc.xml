@@ -15,7 +15,7 @@
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	-->
-	<context:component-scan base-package="com.bobo.testSSM.controller" />
+	<context:component-scan base-package="com.bobo.testSSM" />
 	
 	<!-- 是spring MVC为@Controllers分发请求所必须的。
 		提供了：数据绑定支持，@NumberFormatannotation支持，@DateTimeFormat支持，@Valid支持，读写XML的支持（JAXB），读写JSON的支持（Jackson）。-->
